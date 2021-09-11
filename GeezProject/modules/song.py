@@ -24,6 +24,7 @@ import time
 from random import randint
 from urllib.parse import urlparse
 
+from node-fetch import fetch
 import aiofiles
 import aiohttp
 import requests
