@@ -16,6 +16,7 @@
 
 
 from __future__ import unicode_literals
+from node-fetch import fetch
 
 import asyncio
 import math
@@ -24,7 +25,6 @@ import time
 from random import randint
 from urllib.parse import urlparse
 
-import fetch from 'node-fetch';
 import aiofiles
 import aiohttp
 import requests
