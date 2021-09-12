@@ -248,7 +248,7 @@ def get_file_extension_from_url(url):
 async def download_song(url):
     song_name = f"{randint(6969, 6999)}.mp3"
     async with aiohttp.ClientSession() as session:
-        async with session.get(url) as resp:
+        async with session.get('http://python.org') as resp:
             if resp.status == 200:
                 f = await aiofiles.open(song_name, mode="wb")
                 await f.write(await resp.read())
