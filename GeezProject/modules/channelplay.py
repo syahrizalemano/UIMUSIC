@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from node-fetch import fetch
+import fetch from 'node-fetch';
 
 import json
 import os
