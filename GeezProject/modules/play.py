@@ -37,7 +37,7 @@ from GeezProject.config import ARQ_API_KEY
 from GeezProject.config import BOT_NAME as bn
 from GeezProject.config import DURATION_LIMIT
 from GeezProject.config import UPDATES_CHANNEL as updateschannel
-from GeezProject.config import que
+from GeezProject.config import que THUMB_IMG, DURATION_LIMIT, BOT_USERNAME, BOT_NAME, UPDATES_CHANNEL, GROUP_SUPPORT, ASSISTANT_NAME
 from GeezProject.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,BOT_USERNAME, OWNER
 from GeezProject.function.admins import admins as a
 from GeezProject.helpers.admins import get_administrators
@@ -628,8 +628,14 @@ async def play(_, message: Message):
                     ],
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
-            )       
-            await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
+            )
+            await message.photo(
+                photo=f"{THUMB_IMG}",
+                caption=toxxt,
+                reply_markup=keyboard
+            )
+             
+            await lel.delete()
             # WHY PEOPLE ALWAYS LOVE PORN ?? (A point to think)
             return
             # Returning to pornhub
@@ -641,7 +647,7 @@ async def play(_, message: Message):
                 url = f"https://youtube.com{results[0]['url_suffix']}"
                 title = results[0]["title"][:25]
                 thumbnail = results[0]["thumbnails"][0]
-                thumb_name = f"thumb{title}.jpg"
+                thumb_name = f"thumb-{title}-UIMUSSIC.jpg"
                 thumb = requests.get(thumbnail, allow_redirects=True)
                 open(thumb_name, "wb").write(thumb.content)
                 duration = results[0]["duration"]
