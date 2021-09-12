@@ -16,8 +16,8 @@
 
 
 from __future__ import unicode_literals
-from node-fetch import fetch
 
+import fetch from 'node-fetch';
 import asyncio
 import math
 import os
