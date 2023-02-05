@@ -171,7 +171,7 @@ async def reload(client: Client, message: Message):
                         "Group Support", url=f"https://t.me/ANOBOTZ"
                     ),
                     InlineKeyboardButton(
-                        "Created By", url=f"https://t.me/bcddgblg"
+                        "Managed By", url=f"https://t.me/bcddgblg"
                     )
                 ]
             ]
