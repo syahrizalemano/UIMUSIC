@@ -20,3 +20,4 @@ python-arq
 future
 psutil
 wget
+yt_dlp
