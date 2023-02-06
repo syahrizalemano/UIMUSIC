@@ -44,4 +44,4 @@ PMPERMIT = getenv("PMPERMIT", None)
 LOG_GRP = getenv("LOG_GRP", None)
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ !").split())
 THUMB_IMG = getenv("https://telegra.ph/file/898321f1318ab1c1e3f94.png"
-SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS").split())
