@@ -25,7 +25,7 @@ response = requests.get(BG_IMAGE)
 with open("./etc/foreground.png", "wb"). as file:
     file.write(response.content)
 bot = Bot(
-    ":memory":
+    ":memory:",
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
