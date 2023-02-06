@@ -16,6 +16,7 @@
 
 
 import requests
+import sys
 from pyrogram import Client as Bot
 
 from GeezProject.config import API_HASH, API_ID, BG_IMAGE, BOT_TOKEN
