@@ -32,6 +32,6 @@ bot = Bot(
     bot_token=BOT_TOKEN,
     plugins=dict(root="GeezProject.modules"),
 )
-        sys.exit()
+
 bot.start()
 run()
