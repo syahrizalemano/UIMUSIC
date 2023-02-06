@@ -1,6 +1,7 @@
 from os import path
 
-from youtube-dl import YoutubeDL
+from yt_dlp import YoutubeDL
+#decode by ano
 
 from GeezProject.config import DURATION_LIMIT
 from GeezProject.helpers.errors import DurationLimitError
