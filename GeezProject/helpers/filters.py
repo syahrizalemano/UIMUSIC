@@ -18,7 +18,6 @@
 from typing import List, Union
 
 from pyrogram import filters
-from pyrogram.types import Message
 
 from GeezProject.config import COMMAND_PREFIXES
 

@@ -28,7 +28,6 @@ import aiofiles
 import aiohttp
 import requests
 import wget
-import yt_dlp
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
@@ -41,7 +40,6 @@ from GeezProject.modules.play import arq
 
 @Client.on_message(filters.command("song") & ~filters.channel)
 def song(client, message):
-
     user_id = message.from_user.id
     user_name = message.from_user.first_name
     rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
@@ -72,7 +70,7 @@ def song(client, message):
         return
     m.edit("Downloading the song ")
     try:
-        with youtube-dl.YoutubeDL(ydl_opts) as ydl:
+        with youtube - dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
@@ -117,7 +115,7 @@ def get_text(message: Message) -> [None, str]:
 def humanbytes(size):
     if not size:
         return ""
-    power = 2 ** 10
+    power = 2**10
     raised_to_pow = 0
     dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
     while size > power:
@@ -248,7 +246,7 @@ def get_file_extension_from_url(url):
 async def download_song(url):
     song_name = f"{randint(6969, 6999)}.mp3"
     async with aiohttp.ClientSession() as session:
-        async with session.get('http://python.org') as resp:
+        async with session.get("http://python.org") as resp:
             if resp.status == 200:
                 f = await aiofiles.open(song_name, mode="wb")
                 await f.write(await resp.read())
@@ -261,7 +259,7 @@ is_downloading = False
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
 @Client.on_message(filters.command("saavn") & ~filters.edited)

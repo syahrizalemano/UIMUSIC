@@ -14,15 +14,22 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from pyrogram import Client
-import asyncio
-from GeezProject.config import SUDO_USERS, PMPERMIT, OWNER, PROJECT_NAME, UPDATES_CHANNEL, SUPPORT_GROUP
-from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.types import Message
+
+from GeezProject.config import (
+    OWNER,
+    PMPERMIT,
+    PROJECT_NAME,
+    SUDO_USERS,
+    SUPPORT_GROUP,
+    UPDATES_CHANNEL,
+)
 from GeezProject.services.callsmusic.callsmusic import client as USER
 
-PMSET =True
+PMSET = True
 pchats = []
+
 
 @USER.on_message(filters.text & filters.private & ~filters.me & ~filters.bot)
 async def pmPermit(client: USER, message: Message):
@@ -33,11 +40,10 @@ async def pmPermit(client: USER, message: Message):
                 return
             await USER.send_message(
                 message.chat.id,
-            f"Saya adalah **Asistant {PROJECT_NAME}.**\n\n ❗️ **Rules:**\n   - Jangan Spam Pesan disini\n   - Jangan Spam Lagu Biar Ga Error\n   - Tutorial Cara Menggunakan bot Lihat di @{UPDATES_CHANNEL} \n\n o- **KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n\n ⛑ **Group Support :** @{SUPPORT_GROUP} - **Owner** {OWNER}\n\n",
+                f"Saya adalah **Asistant {PROJECT_NAME}.**\n\n ❗️ **Rules:**\n   - Jangan Spam Pesan disini\n   - Jangan Spam Lagu Biar Ga Error\n   - Tutorial Cara Menggunakan bot Lihat di @{UPDATES_CHANNEL} \n\n o- **KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n\n ⛑ **Group Support :** @{SUPPORT_GROUP} - **Owner** {OWNER}\n\n",
             )
             return
 
-    
 
 @Client.on_message(filters.command(["/pmpermit"]))
 async def bye(client: Client, message: Message):
@@ -54,15 +60,17 @@ async def bye(client: Client, message: Message):
             await message.reply_text("Pmpermit turned off")
             return
 
-@USER.on_message(filters.text & filters.private & filters.me)        
+
+@USER.on_message(filters.text & filters.private & filters.me)
 async def autopmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
         pchats.append(chat_id)
         await message.reply_text("Approoved to PM due to outgoing messages")
         return
-    message.continue_propagation()    
-    
+    message.continue_propagation()
+
+
 @USER.on_message(filters.command("yes", [".", ""]) & filters.me & filters.private)
 async def pmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
@@ -70,8 +78,8 @@ async def pmPermiat(client: USER, message: Message):
         pchats.append(chat_id)
         await message.reply_text("Approoved to PM")
         return
-    message.continue_propagation()    
-    
+    message.continue_propagation()
+
 
 @USER.on_message(filters.command("no", [".", ""]) & filters.me & filters.private)
 async def rmpmPermiat(client: USER, message: Message):
@@ -80,4 +88,4 @@ async def rmpmPermiat(client: USER, message: Message):
         pchats.remove(chat_id)
         await message.reply_text("Dispprooved to PM")
         return
-    message.continue_propagation()    
+    message.continue_propagation()
