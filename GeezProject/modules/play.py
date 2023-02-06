@@ -37,7 +37,7 @@ from GeezProject.config import ARQ_API_KEY
 from GeezProject.config import BOT_NAME as bn
 from GeezProject.config import DURATION_LIMIT
 from GeezProject.config import UPDATES_CHANNEL as updateschannel
-from GeezProject.config import que, THUMB_IMG, DURATION_LIMIT, BOT_USERNAME, BOT_NAME, UPDATES_CHANNEL, GROUP_SUPPORT, ASSISTANT_NAME
+from GeezProject.config import que, THUMB_IMG, DURATION_LIMIT, BOT_USERNAME, BOT_NAME, UPDATES_CHANNEL, SUPPORT_GROUP, ASSISTANT_NAME
 from GeezProject.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,BOT_USERNAME, OWNER
 from GeezProject.function.admins import admins as a
 from GeezProject.helpers.admins import get_administrators
