@@ -81,6 +81,11 @@
       "description": "Batas durasi audio maksimal untuk download (minutes).",
       "required": true,
       "value": "600"
+    },
+    "THUMB_IMG": { 
+     "description": "Thumbnail"
+     "required": false,
+     "value": "https://telegra.ph/file/898321f1318ab1c1e3f94.png"
     }
   }
 }
