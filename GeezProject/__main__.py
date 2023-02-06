@@ -1,6 +1,6 @@
 import requests
-from DaisyXMusic.config import API_HASH, API_ID, BG_IMAGE, BOT_TOKEN
-from DaisyXMusic.services.pytgcalls import run
+from GeezProject.config import API_HASH, API_ID, BG_IMAGE, BOT_TOKEN
+from GeezProject.services.pytgcalls import run
 from pyrogram import Client as Bot
 from pytgcalls import idle
 
