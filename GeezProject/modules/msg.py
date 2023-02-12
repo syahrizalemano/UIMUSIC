@@ -14,12 +14,13 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import os
-from GeezProject.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,UPDATES_CHANNEL, OWNER
-class Messages():
-      HELP_MSG = [
+from GeezProject.config import ASSISTANT_NAME, PROJECT_NAME
+
+
+class Messages:
+    HELP_MSG = [
         ".",
-f"""
+        f"""
 **Hey 👋 Selamat datang kembali di {PROJECT_NAME}
 
 ✣️ {PROJECT_NAME} dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah.
@@ -27,8 +28,7 @@ f"""
 ✣️ Assistant Music » @{ASSISTANT_NAME}\n\nKlik Next untuk instruksi**
 
 """,
-
-f"""
+        f"""
 **Pengaturan**
 
 1. Jadikan bot sebagai admin
@@ -62,5 +62,5 @@ f"""
 × /end : Untuk Memberhentikan pemutaran Lagu
 × /userbotjoin - Untuk Mengundang asisten ke obrolan Anda
 × /admincache - Untuk MemRefresh admin list
-"""
-      ]
+""",
+    ]
