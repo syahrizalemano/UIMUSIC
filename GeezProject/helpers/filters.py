@@ -21,9 +21,11 @@ from pyrogram import filters
 
 from GeezProject.config import COMMAND_PREFIXES
 
-other_filters = filters.group & ~filters.edited & ~filters.via_bot & ~filters.forwarded
-other_filters2 = (
-    filters.private & ~filters.edited & ~filters.via_bot & ~filters.forwarded
+app.on_message(
+    & filters.group
+    & ~filters.edited
+    & ~filters.via_bot
+    & ~filters.forwarded
 )
 
 
